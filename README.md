@@ -1,15 +1,27 @@
 An API that returns data from the Gizmo website.
 
-## Installation ##
+# Installation #
 
     npm install gizmo-api
 
-## Usage ##
+# Usage #
 
     const gizmo = require("gizmo-api");
 
 ### To get JSON output for a user ###
 
-    gizmo.getUser(query);
+    gizmo.getUser(query, callback);
 
 The query can either be an integer (UserID) or string (Username).
+The callback function will return with an array.
+
+    {
+        "user": {
+            "id": "The user's ID",
+            "uid": "The user's username",
+            "rank": "The user's rank",
+            "avatar": "URL to the user's avatar",
+            "about": "The user's About Me text",
+            "created": "The user's join date (seconds since epoch in UTC)" 
+        } 
+    }
