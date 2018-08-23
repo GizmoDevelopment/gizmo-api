@@ -1,30 +1,32 @@
-const xmlRequest = require("xmlhttprequest");
+const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const url = "https://gizmogames.000webhostapp.com";
 
 function xmlMakeRequest(url, callback) {
 
-    var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
     var xml = new XMLHttpRequest();
-    xml.open("GET", url, true);
+    var json;
 
     xml.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState == this.DONE) {
             json = JSON.parse(this.responseText);
             if (typeof json === undefined) {
                 callback("Failed to parse JSON response");
             } else {
                 callback(json);
             }
-        } else {
-            callback("Failed to request");
         }
     };
 
+    xml.open("GET", url, true);
     xml.send();
 }
 
-exports.getUser = function(userQuery) {
-    xmlMakeRequest("https://gizmogames.000webhostapp.com/api/user?=" + userQuery, continueUser);
-    function continueUser(xmlResponse) {
-        return xmlResponse;
-    }
+exports.getUser = function(userQuery, callback) {
+    xmlMakeRequest(url + "/api/user?=" + userQuery, function(xmlResponse) {
+        if (xmlResponse !== undefined) {
+            callback(xmlResponse);
+        } else {
+            callback("Failed to request");
+        }
+    });
 }
