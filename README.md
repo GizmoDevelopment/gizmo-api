@@ -20,7 +20,8 @@ The callback function will return with an array.
             "id": "The user's ID",
             "uid": "The user's username",
             "rank": "The user's rank",
-            "avatar": "URL to the user's avatar",
+            "avatar": "URL to the user's avatar image",
+            "header": "URL to the user's header image",
             "about": "The user's About Me text",
             "created": "The user's join date (seconds since epoch in UTC)" 
         } 
