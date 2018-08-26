@@ -12,17 +12,25 @@ An API that returns data from the Gizmo website.
 
     gizmo.getUser(query, callback);
 
-The query can either be an integer (UserID) or string (Username).
-The callback function will return with an array.
+The query can either be an integer (UserID) or string (Username). The callback function will return with a parsed JSON array.
 
-    {
-        "user": {
-            "id": "The user's ID",
-            "uid": "The user's username",
-            "rank": "The user's rank",
-            "avatar": "URL to the user's avatar image",
-            "header": "URL to the user's header image",
-            "about": "The user's About Me text",
-            "created": "The user's join date (seconds since epoch in UTC)" 
-        } 
-    }
+You can only make one request every .4 seconds.
+
+# Example #
+
+    gizmo.getUser("Tjaz", function(json) {
+        console.log(json);
+    });
+
+### The console will output this: ###
+       {
+            "user": {
+                "id": "1",
+                "uid": "Tjaz",
+                "rank": "Lord",
+                "avatar": "https://gizmogames.000webhostapp.com/assets/default.jpg",
+                "header": "https://gizmogames.000webhostapp.com/assets/default.jpg",
+                "about": "Hello!",
+                "created": "1534514387" // Seconds since epoch in UTC 
+            } 
+        }

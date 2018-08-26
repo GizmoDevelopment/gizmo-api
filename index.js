@@ -10,7 +10,7 @@ function xmlMakeRequest(url, callback) {
         if (this.readyState == this.DONE) {
             json = JSON.parse(this.responseText);
             if (typeof json === undefined) {
-                callback("Failed to parse JSON");
+                callback("JSON is invalid");
             } else {
                 callback(json);
             }
