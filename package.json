@@ -1,6 +1,6 @@
 {
   "name": "gizmo-api",
-  "version": "0.0.7",
+  "version": "0.0.85",
   "description": "An API that extracts information from the Gizmo site.",
   "main": "index.js",
   "scripts": {

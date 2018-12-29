@@ -8,11 +8,17 @@ function xmlMakeRequest(url, callback) {
 
     xml.onreadystatechange = function() {
         if (this.readyState == this.DONE) {
-            json = JSON.parse(this.responseText);
-            if (typeof json === undefined) {
-                callback("Failed to parse JSON");
+            if (typeof this.responseText === "object") {
+
+                json = JSON.parse(this.responseText);
+
+                if (typeof json === undefined) {
+                    callback("Parsed Response is not a valid Object type");
+                } else {
+                    callback(json);
+                }
             } else {
-                callback(json);
+                callback("Response is not a valid Object type");
             }
         }
     };
@@ -22,7 +28,7 @@ function xmlMakeRequest(url, callback) {
 }
 
 exports.getUser = function(userQuery, callback) {
-    xmlMakeRequest(url + "/api/user?=" + userQuery, function(xmlResponse) {
+    xmlMakeRequest(url + "/api/user?query=" + userQuery, function(xmlResponse) {
         if (xmlResponse !== undefined) {
             callback(xmlResponse);
         } else {
