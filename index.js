@@ -8,7 +8,7 @@ function xmlMakeRequest(url, callback) {
 
     xml.onreadystatechange = function() {
         if (this.readyState == this.DONE) {
-            if (typeof this.responseText === "object") {
+            if (typeof JSON.parse(this.responseText) === "object") {
 
                 json = JSON.parse(this.responseText);
 
