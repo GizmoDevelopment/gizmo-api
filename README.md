@@ -14,7 +14,7 @@ An API that returns data from the Gizmo website.
 
 The query can either be an integer (UserID) or string (Username). The callback function will return with a parsed JSON array.
 
-You can only make one request every .4 seconds.
+You can only make one request every .2 seconds.
 
 # Example #
 
@@ -22,7 +22,7 @@ You can only make one request every .4 seconds.
         console.log(json);
     });
 
-### The console will output this: ###
+### The console will throw this: ###
        {
             "user": {
                 "id": "1",
