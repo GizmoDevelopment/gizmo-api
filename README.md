@@ -18,8 +18,8 @@ You can only make one request every .4 seconds.
 
 # Example #
 
-    gizmo.getUser("Tjaz", json => {
-        console.log(json);
+    gizmo.getUser("Tjaz", res => {
+        console.log(res);
     });
 
 ### The console will output something like this: ###
