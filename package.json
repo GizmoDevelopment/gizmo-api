@@ -1,15 +1,15 @@
 {
-  "name": "gizmo-ai",
-  "version": "0.0.1",
-  "description": "",
+  "name": "gizmo-api",
+  "version": "0.0.95",
+  "description": "An API that extracts user information from the Gizmo site.",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
+  "repository": {
+    "type": "git",
+    "url": "gizmo-api"
   },
-  "author": "Tjaz",
+  "author": "Tjaz - gizmotjaz@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "autocorrect": "^1.2.0",
-    "google-translate-api": "^2.3.0"
+    "request": "^2.88.0"
   }
 }
