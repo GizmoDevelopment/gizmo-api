@@ -29,8 +29,8 @@ You can only make one request every .4 seconds.
                 "id": "1",
                 "uid": "Tjaz",
                 "rank": "Lord",
-                "avatar": "https://wwww.gizmo.moe/assets/default.jpg",
-                "header": "https://wwww.gizmo.moe/assets/default.jpg",
+                "avatar": "https://www.gizmo.moe/assets/default.jpg",
+                "header": "https://www.gizmo.moe/assets/default.jpg",
                 "about": "Hello!",
                 "created": "1534514387" // Seconds since epoch in UTC
                 ...
