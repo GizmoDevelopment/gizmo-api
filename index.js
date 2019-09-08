@@ -1,38 +1,16 @@
-const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-const url = "https://www.gizmo.moe";
+const request = require("request");
 
-function xmlMakeRequest(url, callback) {
-
-    let xml = new XMLHttpRequest();
-    let json;
-
-    xml.onreadystatechange = function() {
-        if (this.readyState == this.DONE) {
-            if (typeof JSON.parse(this.responseText) === "object") {
-
-                json = JSON.parse(this.responseText);
-
-                if (typeof json === undefined) {
-                    callback("Parsed Response is not a valid Object type");
-                } else {
-                    callback(json);
-                }
+exports.getUser = (user, callback) => {
+    request("https://www.gizmo.moe/api/user?query=" + user, (err, res, body) => {
+        if (!err && res.statusCode == 200) {
+            let json = JSON.parse(body);
+            if (typeof json == "object") {
+                callback(json);
             } else {
-                callback("Response is not a valid Object type");
+                callback("Invalid JSON Response");
             }
-        }
-    };
-
-    xml.open("GET", url, true);
-    xml.send();
-}
-
-exports.getUser = function(userQuery, callback) {
-    xmlMakeRequest(url + "/api/user?query=" + userQuery, function(xmlResponse) {
-        if (xmlResponse !== undefined) {
-            callback(xmlResponse);
         } else {
-            callback("Failed to request");
+            callback("Invalid HTTPS Response");
         }
     });
 }
