@@ -10,19 +10,30 @@ An API that returns data from the Gizmo website.
 
 ### To get JSON output for a user ###
 
-    gizmo.getUser(query, callback);
+    gizmo.getUser(query);
 
-The query can either be an integer (UserID) or string (Username).
-The callback function will return with an array.
+The query can either be a number (UserID) or string (Username). The promise will either resolve with a valid JSON object or HTTP error.
 
-    {
-        "user": {
-            "id": "The user's ID",
-            "uid": "The user's username",
-            "rank": "The user's rank",
-            "avatar": "URL to the user's avatar image",
-            "header": "URL to the user's header image",
-            "about": "The user's About Me text",
-            "created": "The user's join date (seconds since epoch in UTC)" 
-        } 
-    }
+You can only make one request every .4 seconds.
+
+# Example #
+
+    gizmo.getUser("Tjaz").then(user => {
+        console.log(res);
+    });
+
+### The console will output something like this: ###
+```javascript
+       {
+            "user": {
+                "id": "1",
+                "uid": "Tjaz",
+                "rank": "Lord",
+                "avatar": "https://www.gizmo.moe/assets/default.jpg",
+                "header": "https://www.gizmo.moe/assets/default.jpg",
+                "about": "Hello!",
+                "created": "1534514387" // Seconds since epoch in UTC
+                ...
+            }
+        }
+```
