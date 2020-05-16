@@ -1,32 +1,45 @@
-const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-const url = "https://gizmogames.000webhostapp.com";
+const https = require("https");
 
-function xmlMakeRequest(url, callback) {
+const GIZMO_URL = "https://www.gizmo.moe";
 
-    var xml = new XMLHttpRequest();
-    var json;
+/**
+ * Fetches data from the Gizmo website via HTTPS GET
+ * @param {String} path 
+ * @param {Function} callback 
+ */
+function GET (path, callback) {
+    https.get(`${GIZMO_URL}${path}`, response => {
 
-    xml.onreadystatechange = function() {
-        if (this.readyState == this.DONE) {
-            json = JSON.parse(this.responseText);
-            if (typeof json === undefined) {
-                callback("Failed to parse JSON");
-            } else {
-                callback(json);
+        if (response.statusCode !== 200) callback(`Request Failed: ${response.statusCode}`);
+
+        let data = "";
+
+        response.on("data", chunk => data += chunk);
+        response.on("end", () => {
+            try {
+                data = JSON.parse(data);
+                callback(data);
+            } catch (e) {
+                callback(`Invalid JSON Response: ${e}`);
             }
-        }
-    };
+         });
 
-    xml.open("GET", url, true);
-    xml.send();
+    });
 }
 
-exports.getUser = function(userQuery, callback) {
-    xmlMakeRequest(url + "/api/user?=" + userQuery, function(xmlResponse) {
-        if (xmlResponse !== undefined) {
-            callback(xmlResponse);
+/**
+ * Receives JSON information of a user
+ * @param {String} query UserID or Username
+ */
+exports.getUser = (query) => {
+    return new Promise((res, rej) => {
+        if (typeof query === "string") {
+            GET(`/api/user?query=${query}`, data => {
+                if (typeof data === "object") res(data);
+                rej(data);
+            });
         } else {
-            callback("Failed to request");
+            rej("Invalid Query Type");
         }
     });
 }
