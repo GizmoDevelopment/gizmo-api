@@ -1,18 +1,13 @@
 {
   "name": "gizmo-api",
-  "version": "0.0.7",
-  "description": "An API that extracts information from the Gizmo site.",
+  "version": "0.1.0",
+  "description": "An API that extracts user information from the Gizmo site.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "gizmo-api"
   },
-  "author": "Tjaz - gizmotjaz@gmail.com",
+  "author": "Tjaz - 25076630+GizmoTjaz@users.noreply.github.com",
   "license": "MIT",
-  "dependencies": {
-    "xmlhttprequest": "^1.8.0"
-  }
+  "dependencies": {}
 }
