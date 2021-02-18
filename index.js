@@ -1,9 +1,11 @@
+// Modules
 const https = require("https");
 
+// Constants
 const GIZMO_URL = "https://www.gizmo.moe";
 
 /**
- * Fetches data from the Gizmo website via HTTPS GET
+ * Fetches data from the Gizmo website via HTTP/GET
  * @param {String} path 
  * @param {Function} callback 
  */
@@ -20,7 +22,7 @@ function GET (path, callback) {
                 data = JSON.parse(data);
                 callback(data);
             } catch (e) {
-                callback(`Invalid JSON Response: ${e}`);
+                callback(`Invalid JSON response: ${e}`);
             }
          });
 
@@ -33,13 +35,12 @@ function GET (path, callback) {
  */
 exports.getUser = (query) => {
     return new Promise((res, rej) => {
-        if (typeof query === "string") {
-            GET(`/api/user?query=${query}`, data => {
-                if (typeof data === "object") res(data);
-                rej(data);
-            });
-        } else {
-            rej("Invalid Query Type");
-        }
+
+        if (typeof query !== "string") return rej("Invalid query type");
+
+        GET(`/api/user?query=${query}`, data => {
+            if (typeof data === "object") res(data);
+            rej(data);
+        });
     });
 }
