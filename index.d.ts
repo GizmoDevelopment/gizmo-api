@@ -7,7 +7,7 @@ export interface User {
     about: string;
     created: number;
     state: string;
-    status: UserStatus;
+    status: UserStatus | "none";
 }
 
 export interface UserStatus {
