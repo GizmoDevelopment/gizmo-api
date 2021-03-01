@@ -1,13 +1,13 @@
 {
   "name": "gizmo-api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An API that extracts user information from the Gizmo site.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "gizmo-api"
+    "url": "https://github.com/GizmoDevelopment/gizmo-api"
   },
-  "author": "Tjaz - 25076630+GizmoTjaz@users.noreply.github.com",
+  "author": "Tjaz (GizmoTjaz)",
   "license": "MIT",
   "dependencies": {}
 }
