@@ -2,7 +2,7 @@
 const https = require("https");
 
 // Constants
-const GIZMO_URL = "https://www.gizmo.moe";
+const GIZMO_ENDPOINT = "https://www.gizmo.moe";
 
 /**
  * Fetches data from the Gizmo website via HTTP/GET
@@ -10,7 +10,7 @@ const GIZMO_URL = "https://www.gizmo.moe";
  * @param {Function} callback 
  */
 function GET (path, callback) {
-    https.get(`${GIZMO_URL}${path}`, response => {
+    https.get(`${GIZMO_ENDPOINT}${path}`, response => {
 
         if (response.statusCode !== 200) callback(`Request Failed: ${response.statusCode}`);
 
@@ -39,7 +39,16 @@ exports.getUser = (query) => {
         if (typeof query !== "string") return rej("Invalid query type");
 
         GET(`/api/user?query=${query}`, data => {
-            if (typeof data === "object") res(data);
+            if (data?.user) {
+                if (typeof data.user?.status === "object") {
+                    res({
+                        ...data.user,
+                        status: JSON.parse(data.user.status)
+                    });
+                } else {
+                    res(data.user);
+                }
+            }
             rej(data);
         });
     });
