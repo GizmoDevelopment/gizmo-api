@@ -2,7 +2,11 @@
 
   on:
     release:
+<<<<<<< HEAD
       - types: [published]
+=======
+      - published
+>>>>>>> fde7f6b237498862cabd156be288b00302507dd2
 
   jobs:
     cd:
