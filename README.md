@@ -58,8 +58,6 @@ This will log the following:
 
 You are limited to **1 request** per **0.3 seconds**!
 
-<br />
-
 ## Table of Contents
 - [Interfaces](#interfaces)
 	- [User](#user)
@@ -71,8 +69,6 @@ You are limited to **1 request** per **0.3 seconds**!
 	- [login](#logging-in-and-receiving-the-token)
 
 ## Interfaces
-
-<br />
 
 ### User
 ```ts
@@ -94,11 +90,7 @@ interface AuthenticatedUser extends User {
 }
 ```
 
-<br />
-
 ## Methods
-
-<br />
 
 ### Fetching a specific user by their ID
 ```ts
