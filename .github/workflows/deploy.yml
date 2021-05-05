@@ -2,6 +2,7 @@
 
   on:
     release:
+      - published
 
   jobs:
     cd:
