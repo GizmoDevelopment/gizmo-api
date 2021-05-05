@@ -6,7 +6,7 @@
   "typings": "./lib/index.d.ts",
   "scripts": {
     "lint": "eslint ./src --ext .ts",
-    "build:ts-node": "tsc -p tsconfig.json && tscpaths -p tsconfig.json -s ./src -o ./lib",
+    "build:ts-node": "tsc -p tsconfig.json && tscpaths -p tsconfig.json -s ./build -o ./lib",
     "build:ts-browser": "tsc -p tsconfig.browser.json && tscpaths -p tsconfig.browser.json -s ./build -o ./build",
     "build:esbuild-browser": "esbuild ./build/index.js --bundle --minify --global-name=gizmo --outfile=./dist/gizmo-api.bundle.js",
     "build:node": "npm run lint && rm -rf ./lib && npm run build:ts-node",
