@@ -1,9 +1,52 @@
 # Gizmo API
-An API that returns data from the Gizmo website. Works in the browser and in Node.
+A minimal module for interfacing with Gizmo's API.
+
+# Table of Contents
+- [Installation](#installation)
+	- [Node](#node)
+	- [Browser](#browser)
+- [Building](#building)
+- [Usage](#usage)
+- [Example](#example)
+- [Documentation](#documentation)
+	- [Interfaces](#interfaces)
+		- [User](#user)
+		- [AuthenticatedUser](#authenticateduser)
+	- [Methods](#methods)
+		- [getUserById](#fetching-a-specific-user-by-their-id)
+		- [getAuthenticatedUser](#fetching-a-specific-user-by-their-token)
+		- [searchForUser](#searching-for-a-user)
+		- [login](#logging-in-and-receiving-the-token)
 
 # Installation
+
+### Node
 ```
-npm install gizmo-api
+npm i gizmo-api
+```
+
+### Browser
+```html
+<script src="https://cdn.gizmo.moe/scripts/gizmo-api@1.0.3.bundle.js"></script>
+
+<script>
+	// Module will then be exposed under the variable 'gizmo'
+</script>
+```
+
+# Building
+
+If you want to build the module and bundle from source, use the following command:
+```
+npm run build
+```
+
+Or alternatively, you can either build the browser bundle or node module separately.
+```
+npm run build:node
+```
+```
+npm run build:browser
 ```
 
 # Usage
@@ -16,19 +59,6 @@ const gizmo = require("gizmo-api");
 ### TypeScript `(ESM)`
 ```ts
 import gizmo from "gizmo-api";
-```
-
-### Browser
-```html
-<!-- Target latest version -->
-<script src="https://cdn.gizmo.moe/scripts/gizmo-api.bundle.js@latest"></script>
-
-<!-- Target specific version -->
-<script src="https://cdn.gizmo.moe/scripts/gizmo-api.bundle.js@1.0.0"></script>
-
-<script>
-	// Module will then be exposed under the global 'gizmo'
-</script>
 ```
 
 # Example
@@ -56,17 +86,7 @@ This will log the following:
 
 # Documentation
 
-You are limited to **1 request** per **0.3 seconds**!
-
-## Table of Contents
-- [Interfaces](#interfaces)
-	- [User](#user)
-	- [AuthenticatedUser](#authenticateduser)
-- [Methods](#methods)
-	- [getUserById](#fetching-a-specific-user-by-their-id)
-	- [getAuthenticatedUser](#fetching-a-specific-user-by-their-token)
-	- [searchForUser](#searching-for-a-user)
-	- [login](#logging-in-and-receiving-the-token)
+You are limited to **1 request** per **0.1 seconds**!
 
 ## Interfaces
 
