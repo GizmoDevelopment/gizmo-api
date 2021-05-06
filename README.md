@@ -1,4 +1,4 @@
-# Gizmo API
+# gizmo-api
 A minimal module for interfacing with Gizmo's API.
 
 # Table of Contents
@@ -67,7 +67,7 @@ Simple user search:
 ```ts
 import gizmo from "gizmo-api";
 
-gizmo.searchForUser("Tjaz").then(user => {
+gizmo.searchForUser("tja").then(user => {
 	console.log(user);
 });
 ```
