@@ -119,7 +119,7 @@ function getUserById (id: number): Promise<User>;
 
 ### Fetching a specific user by their token
 ```ts
-function getAuthenticatedUser (token: string): Promise<User>
+function getAuthenticatedUser (token: string): Promise<User>;
 ```
 
 ### Searching for a user
@@ -133,5 +133,5 @@ function searchForUser (query: SearchQuery): Promise<User>;
 
 ### Logging in and receiving the token
 ```ts
-function login (username: string, password: string): Promise<AuthenticatedUser>
+function login (username: string, password: string): Promise<AuthenticatedUser>;
 ```
