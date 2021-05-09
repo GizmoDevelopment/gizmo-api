@@ -1,5 +1,5 @@
 // Utils
-import { gizmoFetch } from "@utils/fetch";
+import { gizmoFetch } from "./utils/fetch";
 import { stringToBase64 } from "./utils/helpers";
 
 // Types

@@ -2,7 +2,7 @@
 import fetch from "cross-fetch";
 
 // Utils
-import { GIZMO_ENDPOINT } from "@utils/constants";
+import { GIZMO_ENDPOINT } from "./constants";
 
 // Types
 import { GizmoFetchResponse } from "../types";
