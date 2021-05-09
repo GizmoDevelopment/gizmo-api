@@ -27,7 +27,7 @@ npm i gizmo-api
 
 ### Browser
 ```html
-<script src="https://cdn.gizmo.moe/scripts/gizmo-api@1.0.4.bundle.js"></script>
+<script src="https://cdn.gizmo.moe/scripts/gizmo-api@1.0.5.bundle.js"></script>
 
 <script>
 	// Module will then be exposed under the variable 'gizmo'
@@ -65,9 +65,9 @@ import gizmo from "gizmo-api";
 
 Simple user search:
 ```ts
-import gizmo from "gizmo-api";
+import { searchForUser } from "gizmo-api";
 
-gizmo.searchForUser("tja").then(user => {
+searchForUser("tja").then(user => {
 	console.log(user);
 });
 ```
@@ -76,7 +76,7 @@ This will log the following:
 {
 	"id": 1,
 	"username": "Tjaz",
-	"rank": "Lord",
+	"rank": "God",
 	"avatar_url": "https://cdn.gizmo.moe/uploads/avatars/...",
 	"header_url": "https://cdn.gizmo.moe/uploads/headers/...",
 	"about": "...",
