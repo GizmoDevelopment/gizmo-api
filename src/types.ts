@@ -3,7 +3,7 @@ export type SearchQuery = number | string;
 export interface User {
 	id: number;
 	username: string;
-	rank: string;
+	badges: number;
 	avatar_url: string | null;
 	header_url: string | null;
 	about: string;

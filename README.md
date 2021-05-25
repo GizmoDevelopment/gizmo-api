@@ -27,7 +27,7 @@ npm i gizmo-api
 
 ### Browser
 ```html
-<script src="https://cdn.gizmo.moe/scripts/gizmo-api@1.0.5.bundle.js"></script>
+<script src="https://cdn.gizmo.moe/scripts/gizmo-api@1.0.6.bundle.js"></script>
 
 <script>
 	// Module will then be exposed under the variable 'gizmo'
@@ -76,7 +76,7 @@ This will log the following:
 {
 	"id": 1,
 	"username": "Tjaz",
-	"rank": "God",
+	"badges": 3,
 	"avatar_url": "https://cdn.gizmo.moe/uploads/avatars/...",
 	"header_url": "https://cdn.gizmo.moe/uploads/headers/...",
 	"about": "...",
@@ -95,12 +95,23 @@ You are limited to **1 request** per **0.1 seconds**!
 interface User {
 	id: number;
 	username: string;
-	rank: string;
+	badges: number;
 	avatar_url: string | null;
 	header_url: string | null;
 	about: string;
 	created: number;
 }
+
+/*
+	To be able to map badges to the badge binary, use the provided constant
+*/
+
+// lib/constants.ts
+const BADGES = {
+	NONE: 			 0,
+	DEVELOPER: 	1 << 0,
+	MODERATOR: 	1 << 1
+};
 ```
 
 ### AuthenticatedUser
