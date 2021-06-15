@@ -4,8 +4,8 @@ export interface User {
 	id: number;
 	username: string;
 	badges: number;
-	avatar_url: string | null;
-	header_url: string | null;
+	avatar_url: string;
+	header_url: string;
 	about: string;
 	created: number;
 }
