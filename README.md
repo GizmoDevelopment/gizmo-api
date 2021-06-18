@@ -103,10 +103,10 @@ interface User {
 }
 
 /*
-	To be able to map badges to the badge binary, use the provided constant
+    To be able to map badges to the badge number, use the provided constant
 */
 
-// lib/constants.ts
+// lib/constants
 const BADGES = {
     NONE:       0,
     DEVELOPER:  1 << 0,
