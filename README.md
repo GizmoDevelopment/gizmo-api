@@ -27,7 +27,7 @@ npm i gizmo-api
 
 ### Browser
 ```html
-<script src="https://cdn.gizmo.moe/scripts/gizmo-api@1.0.7.bundle.js"></script>
+<script src="https://cdn.gizmo.moe/scripts/gizmo-api@1.0.9.bundle.js"></script>
 
 <script>
     // Module will then be exposed under the variable 'gizmo'
