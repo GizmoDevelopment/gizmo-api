@@ -27,7 +27,7 @@ npm i gizmo-api
 
 ### Browser
 ```html
-<script src="https://cdn.gizmo.moe/scripts/gizmo-api@1.0.6.bundle.js"></script>
+<script src="https://cdn.gizmo.moe/scripts/gizmo-api@1.0.7.bundle.js"></script>
 
 <script>
     // Module will then be exposed under the variable 'gizmo'
@@ -95,23 +95,24 @@ You are limited to **1 request** per **0.1 seconds**!
 interface User {
     id: number;
     username: string;
-    badges: number;
+    badges: Badge[];
     avatar_url: string | null;
     header_url: string | null;
     about: string;
     created: number;
 }
 
-/*
-    To be able to map badges to the badge number, use the provided constant
-*/
-
+type Badge = "DEVELOPER" | "MODERATOR";
+```
+To check for whether a user has a certain badge, use the provided constant:
+```ts
 // lib/constants
 const BADGES = {
-    NONE:       0,
-    DEVELOPER:  1 << 0,
-    MODERATOR: 	1 << 1
+    DEVELOPER: "DEVELOPER",
+    MODERATOR: "MODERATOR"
 };
+
+user.badges.includes(BADGES.DEVELOPER);
 ```
 
 ### AuthenticatedUser
