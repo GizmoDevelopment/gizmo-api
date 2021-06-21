@@ -3,8 +3,8 @@ import { gizmoFetch } from "./utils/fetch";
 import { stringToBase64 } from "./utils/helpers";
 
 // Types
-import { SearchQuery } from "@typings/main";
-import { User, AuthenticatedUser } from "@typings/user";
+import { SearchQuery } from "./typings/main";
+import { User, AuthenticatedUser } from "./typings/user";
 
 export async function searchForUser (query: SearchQuery): Promise<User> {
 
