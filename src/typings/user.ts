@@ -1,7 +1,7 @@
 export interface User {
 	id: number;
 	username: string;
-	badges: number;
+	badges: Badge[];
 	avatar_url: string;
 	header_url: string;
 	about: string;
@@ -11,3 +11,5 @@ export interface User {
 export interface AuthenticatedUser extends User {
 	token: string;
 }
+
+export type Badge = "DEVELOPER" | "MODERATOR";
