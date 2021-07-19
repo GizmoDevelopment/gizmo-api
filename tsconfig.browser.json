@@ -9,8 +9,7 @@
 		"sourceMap": true,
 		"paths": {
 			"@/*": ["./*"],
-			"@utils/*": ["./utils/*"],
-			"@typings/*": ["./typings/*"]
+			"@utils/*": ["./utils/*"]
 		}
 	},
 	"include": [

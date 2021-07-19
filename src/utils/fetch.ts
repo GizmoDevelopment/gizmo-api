@@ -5,7 +5,7 @@ import fetch from "cross-fetch";
 import { GIZMO_ENDPOINT } from "./constants";
 
 // Types
-import { GizmoFetchResponse } from "@typings/main";
+import { GizmoFetchResponse } from "../types";
 
 export async function gizmoFetch<T> (uri: string, options?: RequestInit): Promise<GizmoFetchResponse<T>> {
 

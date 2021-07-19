@@ -27,10 +27,10 @@ npm i gizmo-api
 
 ### Browser
 ```html
-<script src="https://cdn.gizmo.moe/scripts/gizmo-api@1.0.6.bundle.js"></script>
+<script src="https://cdn.gizmo.moe/scripts/gizmo-api@1.0.9.bundle.js"></script>
 
 <script>
-	// Module will then be exposed under the variable 'gizmo'
+    // Module will then be exposed under the variable 'gizmo'
 </script>
 ```
 
@@ -68,19 +68,19 @@ Simple user search:
 import { searchForUser } from "gizmo-api";
 
 searchForUser("tja").then(user => {
-	console.log(user);
+    console.log(user);
 });
 ```
 This will log the following:
 ```json
 {
-	"id": 1,
-	"username": "Tjaz",
-	"badges": 3,
-	"avatar_url": "https://cdn.gizmo.moe/uploads/avatars/...",
-	"header_url": "https://cdn.gizmo.moe/uploads/headers/...",
-	"about": "...",
-	"created": 1534514387
+    "id": 1,
+    "username": "Tjaz",
+    "badges": 3,
+    "avatar_url": "https://cdn.gizmo.moe/uploads/avatars/...",
+    "header_url": "https://cdn.gizmo.moe/uploads/headers/...",
+    "about": "...",
+    "created": 1534514387
 }
 ```
 
@@ -93,31 +93,32 @@ You are limited to **1 request** per **0.1 seconds**!
 ### User
 ```ts
 interface User {
-	id: number;
-	username: string;
-	badges: number;
-	avatar_url: string | null;
-	header_url: string | null;
-	about: string;
-	created: number;
+    id: number;
+    username: string;
+    badges: Badge[];
+    avatar_url: string | null;
+    header_url: string | null;
+    about: string;
+    created: number;
 }
 
-/*
-	To be able to map badges to the badge binary, use the provided constant
-*/
-
-// lib/constants.ts
+type Badge = "DEVELOPER" | "MODERATOR";
+```
+To check for whether a user has a certain badge, use the provided constant:
+```ts
+// lib/constants
 const BADGES = {
-	NONE: 			 0,
-	DEVELOPER: 	1 << 0,
-	MODERATOR: 	1 << 1
+    DEVELOPER: "DEVELOPER",
+    MODERATOR: "MODERATOR"
 };
+
+user.badges.includes(BADGES.DEVELOPER);
 ```
 
 ### AuthenticatedUser
 ```ts
 interface AuthenticatedUser extends User {
-	token: string;
+    token: string;
 }
 ```
 

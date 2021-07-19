@@ -1,6 +1,6 @@
 {
   "name": "gizmo-api",
-  "version": "1.0.6",
+  "version": "1.0.9",
   "description": "Simple interfacing with the Gizmo API.",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
