@@ -7,7 +7,7 @@ import { SearchQuery, User, AuthenticatedUser } from "./types";
 
 export async function searchForUser (query: SearchQuery): Promise<User> {
 
-	const response = await gizmoFetch<User>(`/users/search?q=${ query }`);
+	const response = await gizmoFetch<User>(`/users/search?q=${query}`);
 
 	if ("data" in response.data) {
 		return response.data.data;
@@ -21,7 +21,7 @@ export async function getAuthenticatedUser (token: string): Promise<User> {
 
 	const response = await gizmoFetch<User>("/users/@me", {
 		headers: {
-			"Authorization": `Bearer ${ token }`
+			"Authorization": `Bearer ${token}`
 		},
 		credentials: "same-origin"
 	});
@@ -36,7 +36,7 @@ export async function getAuthenticatedUser (token: string): Promise<User> {
 
 export async function getUserById (id: number): Promise<User> {
 
-	const response = await gizmoFetch<User>(`/users/${ id }`);
+	const response = await gizmoFetch<User>(`/users/${id}`);
 
 	if ("data" in response.data) {
 		return response.data.data;
@@ -50,7 +50,7 @@ export async function login (username: string, password: string): Promise<Authen
 
 	const response = await gizmoFetch<AuthenticatedUser>("/users/login", {
 		headers: {
-			"Authorization": `Basic ${ stringToBase64(`${ username }:${ password }`) }`
+			"Authorization": `Basic ${stringToBase64(`${username}:${password}`)}`
 		},
 		credentials: "same-origin"
 	});
