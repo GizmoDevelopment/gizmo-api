@@ -11,7 +11,7 @@ describe("gizmo-api test", () => {
 		assert.strictEqual(user.id, 1);
 	});
 
-	it("Should be able to fetch user by ID", async () => {
+	it("Should be able to fetch a user by their ID", async () => {
 
 		const user = await gizmo.getUserById(1);
 
