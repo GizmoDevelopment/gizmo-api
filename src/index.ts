@@ -1,9 +1,9 @@
 // Utils
-import { gizmoFetch } from "./utils/fetch";
-import { stringToBase64 } from "./utils/helpers";
+import { gizmoFetch } from "@utils/fetch";
+import { stringToBase64 } from "@utils/helpers";
 
 // Types
-import { SearchQuery, User, AuthenticatedUser } from "./types";
+import { SearchQuery, User, AuthenticatedUser } from "@typings";
 
 export async function searchForUser (query: SearchQuery): Promise<User> {
 
@@ -14,7 +14,7 @@ export async function searchForUser (query: SearchQuery): Promise<User> {
 	} else {
 		throw new Error(response.data.message);
 	}
-	
+
 }
 
 export async function getAuthenticatedUser (token: string): Promise<User> {
