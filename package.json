@@ -11,7 +11,7 @@
   "scripts": {
     "prepare": "ts-patch install -s",
     "lint": "eslint src",
-	"test": "mocha ./tests/api.js",
+    "test": "mocha ./tests/api.js",
     "build:ts-node": "tsc -p tsconfig.node.json",
     "build:ts-browser": "tsc -p tsconfig.browser.json",
     "build:js-bundle": "esbuild ./dist/index.js --bundle --minify --global-name=gizmo --outfile=./bundle/gizmo-api.bundle.js",
@@ -37,9 +37,8 @@
   },
   "homepage": "https://github.com/GizmoDevelopment/gizmo-api/#readme",
   "devDependencies": {
+    "@gizmo-dev/eslint-config": "^1.0.0",
     "@types/node": "^14.17.9",
-    "@typescript-eslint/eslint-plugin": "^4.22.0",
-    "@typescript-eslint/parser": "^4.22.0",
     "esbuild": "^0.12.15",
     "eslint": "^7.25.0",
     "mocha": "^9.0.3",
