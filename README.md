@@ -92,6 +92,8 @@ You are limited to **1 request** per **0.1 seconds**!
 
 ### User
 ```ts
+// import { User, Badge } from "gizmo-api/lib/types"
+
 interface User {
     id: number;
     username: string;
@@ -106,7 +108,8 @@ type Badge = "DEVELOPER" | "MODERATOR";
 ```
 To check for whether a user has a certain badge, use the provided constant:
 ```ts
-// lib/constants
+// import { BADGES } from "gizmo-api/lib/constants"
+
 const BADGES = {
     DEVELOPER: "DEVELOPER",
     MODERATOR: "MODERATOR"
