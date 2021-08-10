@@ -1,39 +1,35 @@
-  name: Deploy
+name: "CodeQL"
 
-  on:
-    workflow_dispatch:
-    release:
-      types: [ published ]
+on:
+  push
+  pull_request:
+    types: [ opened ]
 
-  jobs:
-    cd:
-      runs-on: ${{ matrix.os }}
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
 
-      strategy:
-        matrix:
-          os: [ubuntu-latest]
-          node: [14]
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ "javascript" ]
 
-      steps:
-        - name: Checkout
-          uses: actions/checkout@master
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-        - name: Setup node env
-          uses: actions/setup-node@v2.1.2
-          with:
-            node-version: ${{ matrix.node }}
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v1
+      with:
+        languages: ${{ matrix.language }}
 
-        - name: Install dependencies
-          run: npm i
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v1
 
-        - name: Build module
-          run: npm run build:node
-
-        - name: Remove useless files and directories
-          run: rm -rf ./node_modules && rm -rf ./build && rm -rf ./dist && rm -rf ./src
-
-        - name: Deploy
-          uses: JS-DevTools/npm-publish@v1
-          with:
-            token: ${{ secrets.NPM_TOKEN }}
-            check-version: true
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
