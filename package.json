@@ -18,7 +18,7 @@
     "build:rename-bundle": "node ./rename-bundle.js",
     "build:node": "rm -rf ./lib && npm run build:ts-node",
     "build:browser": "rm -rf ./bundle && rm -rf ./dist && npm run build:ts-browser && npm run build:js-bundle && npm run build:rename-bundle",
-    "build": "npm run lint && npm run build:node && npm run build:browser && npm run test && npm run build:docs"
+    "build": "npm run lint && npm run build:node && npm run build:browser && npm run test"
   },
   "files": [
     "lib"
