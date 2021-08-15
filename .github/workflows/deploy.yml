@@ -23,16 +23,16 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-    - name: Install dependencies
+      - name: Install dependencies
         run: npm i
 
-    - name: Build module
+      - name: Build module
         run: npm run build:node
 
-    - name: Remove useless files and directories
+      - name: Remove useless files and directories
         run: rm -rf ./node_modules && rm -rf ./build && rm -rf ./dist && rm -rf ./src
 
-    - name: Deploy
+      - name: Deploy
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
