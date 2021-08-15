@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "prepare": "ts-patch install -s",
-    "lint": "eslint src",
+    "lint": "eslint ./src",
     "test": "mocha ./tests/api.js",
     "build:ts-node": "tsc -p tsconfig.node.json",
     "build:ts-browser": "tsc -p tsconfig.browser.json",
@@ -18,7 +18,9 @@
     "build:rename-bundle": "node ./rename-bundle.js",
     "build:node": "rm -rf ./lib && npm run build:ts-node",
     "build:browser": "rm -rf ./bundle && rm -rf ./dist && npm run build:ts-browser && npm run build:js-bundle && npm run build:rename-bundle",
-    "build": "npm run lint && npm run build:node && npm run build:browser && npm run test"
+    "build:docs": "typedoc ./src/index.ts --theme ./node_modules/eledoc/bin/default/",
+    "build": "npm run lint && npm run build:node && npm run build:browser && npm run test && npm run build:docs",
+    "doc": "npm run build:docs"
   },
   "files": [
     "lib"
@@ -37,12 +39,16 @@
   },
   "homepage": "https://github.com/GizmoDevelopment/gizmo-api/#readme",
   "devDependencies": {
-    "@gizmo-dev/eslint-config": "^1.0.1",
+    "@gizmo-dev/eslint-config": "^1.0.21",
     "@types/node": "^14.17.9",
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
+    "eledoc": "^0.2.1",
     "esbuild": "^0.12.20",
     "eslint": "^7.25.0",
     "mocha": "^9.0.3",
     "ts-patch": "^1.4.2",
+    "typedoc": "^0.21.5",
     "typescript": "^4.2.4",
     "typescript-transform-paths": "^3.3.0"
   },
