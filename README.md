@@ -79,7 +79,7 @@ This will log the following:
     "badges": 3,
     "avatar_url": "https://cdn.gizmo.moe/uploads/avatars/...",
     "banner_url": "https://cdn.gizmo.moe/uploads/banners/...",
-    "about": "...",
+    "about_me": "...",
     "created": 1534514387
 }
 ```
@@ -100,7 +100,7 @@ interface User {
     badges: Badge[];
     avatar_url: string | null;
     banner_url: string | null;
-    about: string;
+    about_me: string;
     created: number;
 }
 

@@ -25,7 +25,7 @@ export interface User {
 	badges: Badge[];
 	avatar_url: string;
 	banner_url: string;
-	about: string;
+	about_me: string;
 	created: number;
 }
 
