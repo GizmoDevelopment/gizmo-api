@@ -1,0 +1,39 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+  release:
+    types: [ published ]
+
+jobs:
+  cd:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+        node: [ 14 ]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Setup node env
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: ${{ matrix.node }}
+
+    - name: Install dependencies
+        run: npm i
+
+    - name: Build module
+        run: npm run build:node
+
+    - name: Remove useless files and directories
+        run: rm -rf ./node_modules && rm -rf ./build && rm -rf ./dist && rm -rf ./src
+
+    - name: Deploy
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          check-version: true
