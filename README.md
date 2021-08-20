@@ -76,7 +76,7 @@ This will log the following:
 {
     "id": 1,
     "username": "Tjaz",
-    "badges": 3,
+    "badges": [ "DEVELOPER", "MODERATOR" ],
     "avatar_url": "https://cdn.gizmo.moe/uploads/avatars/...",
     "banner_url": "https://cdn.gizmo.moe/uploads/banners/...",
     "about_me": "...",
