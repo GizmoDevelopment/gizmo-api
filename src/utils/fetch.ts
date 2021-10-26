@@ -2,7 +2,7 @@
 import { GIZMO_ENDPOINT } from "@utils/constants";
 
 // Types
-import { GizmoFetchResponse } from "@typings";
+import type { GizmoFetchResponse } from "@typings";
 
 function _fetch (url: string, options: RequestInit): Promise<Response> {
 	if (typeof fetch === "function") {
