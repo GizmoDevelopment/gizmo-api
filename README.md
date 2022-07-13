@@ -168,3 +168,8 @@ function searchForUser (query: SearchQuery): Promise<User>;
 ```ts
 function login (username: string, password: string): Promise<AuthenticatedUser>;
 ```
+
+### Checking if a user has a badge
+```ts
+function userHasBadge (user: User | AuthenticatedUser, badge: Badge): boolean;
+```
