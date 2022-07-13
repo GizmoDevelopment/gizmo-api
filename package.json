@@ -7,7 +7,7 @@
   "keywords": [
     "gizmo",
     "gizmo-api",
-	"gizmo api"
+    "gizmo api"
   ],
   "scripts": {
     "prepare": "ts-patch install -s",
@@ -39,7 +39,7 @@
   "homepage": "https://github.com/GizmoDevelopment/gizmo-api/#readme",
   "devDependencies": {
     "@gizmo-dev/eslint-config": "^1.0.28",
-    "@types/node": "^14.18.9",
+    "@types/node": "^12.20.55",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.13.0",
     "esbuild": "^0.14.25",
