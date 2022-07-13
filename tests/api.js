@@ -28,7 +28,7 @@ describe("gizmo-api test", () => {
 		assert.strictEqual(typeof user.avatar_url, "string");
 		assert.strictEqual(user.hasOwnProperty("banner_url"), true);
 		assert.strictEqual(typeof user.about_me, "string");
-		assert.strictEqual(typeof user.created, "number");
+		assert.strictEqual(typeof user.created_at, "number");
 	});
 
 });
