@@ -8,7 +8,7 @@ export { BADGES } from "@constants";
 // Types
 import type { SearchQuery, User, AuthenticatedUser, Badge } from "@typings";
 
-export type { SearchQuery, User, AuthenticatedUser, Badge } from "@typings";
+export type { SearchQuery, User, AuthenticatedUser, Badge, SuccessResult, ErrorResult } from "@typings";
 
 export async function searchForUser (query: SearchQuery): Promise<User> {
 
