@@ -1,5 +1,5 @@
 bundle
 dist
 lib
-rename-bundle.js
+dev
 tests/**

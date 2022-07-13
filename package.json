@@ -16,7 +16,7 @@
     "build:ts-node": "tsc -p tsconfig.node.json",
     "build:ts-browser": "tsc -p tsconfig.browser.json",
     "build:js-bundle": "esbuild ./dist/index.js --bundle --minify --global-name=gizmo --outfile=./bundle/gizmo-api.bundle.js",
-    "build:rename-bundle": "node ./rename-bundle.js",
+    "build:rename-bundle": "node ./dev/rename-bundle.js",
     "build:node": "rm -rf ./lib && npm run build:ts-node",
     "build:browser": "rm -rf ./dist && npm run build:ts-browser && npm run build:js-bundle && npm run build:rename-bundle",
     "build": "npm run lint && npm run build:node && npm run build:browser && npm run test"

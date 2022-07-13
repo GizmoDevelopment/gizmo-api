@@ -19,6 +19,6 @@
 		"./src/**/*"
 	],
 	"exclude": [
-		"./rename-bundle.js"
+		"dev"
 	]
 }
