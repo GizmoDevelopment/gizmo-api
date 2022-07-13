@@ -26,7 +26,7 @@ export interface User {
 	avatar_url: string;
 	banner_url: string | null;
 	about_me: string;
-	created: number;
+	created_at: number;
 }
 
 export interface AuthenticatedUser extends User {

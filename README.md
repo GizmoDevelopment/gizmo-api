@@ -80,7 +80,7 @@ This will log the following:
     "avatar_url": "https://cdn.gizmo.moe/uploads/avatars/...",
     "banner_url": "https://cdn.gizmo.moe/uploads/banners/...",
     "about_me": "...",
-    "created": 1534514387
+    "created_at": 1534514387
 }
 ```
 
@@ -104,7 +104,7 @@ interface User {
     avatar_url: string | null;
     banner_url: string | null;
     about_me: string;
-    created: number;
+    created_at: number;
 }
 ```
 
