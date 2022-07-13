@@ -1,6 +1,6 @@
 {
   "name": "gizmo-api",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A minimal wrapper for interfacing with the Gizmo API.",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
