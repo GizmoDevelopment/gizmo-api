@@ -2,6 +2,9 @@
 import { gizmoFetch } from "@utils/fetch";
 import { stringToBase64 } from "@utils/helpers";
 
+// Constants
+export { BADGES } from "@constants";
+
 // Types
 import type { SearchQuery, User, AuthenticatedUser, Badge } from "@typings";
 
