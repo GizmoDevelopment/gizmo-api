@@ -1,9 +1,18 @@
 // Modules
 const fs = require("fs");
+const path = require("path");
+
+// Paths
+const rootDirPath = path.join(__dirname, "../");
+const bundleDirPath = path.join(rootDirPath, "bundle");
+const packageJsonPath = path.join(rootDirPath, "package.json");
 
 // Variables
-const { version } = require('../package.json');
+const { version } = require(packageJsonPath);
 
-fs.rename("../bundle/gizmo-api.bundle.js", `../bundle/gizmo-api@${ version }.bundle.js`, err => {
+const oldBundlePath = path.join(bundleDirPath, "gizmo-api.bundle.js");
+const newBundlePath = path.join(bundleDirPath, `gizmo-api@${ version }.bundle.js`);
+
+fs.rename(oldBundlePath, newBundlePath, err => {
 	if (err) throw err;
 });
