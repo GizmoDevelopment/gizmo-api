@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "prepare": "ts-patch install -s",
-    "lint": "eslint ./src/**",
+    "lint": "eslint --ext .ts,.js ./src",
     "test": "mocha ./tests/api.js",
     "build:ts-node": "tsc -p tsconfig.node.json",
     "build:ts-browser": "tsc -p tsconfig.browser.json",
