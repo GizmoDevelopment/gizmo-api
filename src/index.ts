@@ -3,7 +3,7 @@ import { gizmoFetch } from "@utils/fetch";
 import { stringToBase64 } from "@utils/helpers";
 
 // Types
-import type { SearchQuery, User, AuthenticatedUser } from "@typings";
+import type { SearchQuery, User, AuthenticatedUser, Badge } from "@typings";
 
 export type { SearchQuery, User, AuthenticatedUser, Badge } from "@typings";
 
@@ -63,4 +63,13 @@ export async function login (username: string, password: string): Promise<Authen
 		throw new Error(response.data.message);
 	}
 
+}
+
+export function userHasBadge (user: User | AuthenticatedUser, badge: Badge): boolean {
+
+	if (typeof badge !== "string") {
+		throw new Error("Invalid badge type.");
+	}
+
+	return user.badges.includes(badge);
 }

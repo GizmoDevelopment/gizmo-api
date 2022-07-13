@@ -88,11 +88,14 @@ This will log the following:
 
 You are limited to **1 request** per **0.1 seconds**!
 
-## Interfaces
+## Types
+
 
 ### User
+A base user.
+
 ```ts
-// import { User, Badge } from "gizmo-api/lib/types"
+// import type { User } from "gizmo-api"
 
 interface User {
     id: number;
@@ -103,17 +106,32 @@ interface User {
     about_me: string;
     created: number;
 }
+```
+
+### Badge
+The badge union.
+
+```ts
+// import type { Badge } from "gizmo-api"
 
 type Badge = "DEVELOPER" | "MODERATOR";
 ```
-To check for whether a user has a certain badge, use the provided constant:
+
+To check for whether a user has a certain badge, use the provided enum and method:
 ```ts
-// import { BADGES } from "gizmo-api/lib/constants"
+// import { userHasBadge, BADGES } from "gizmo-api"
 
 const BADGES = {
     DEVELOPER: "DEVELOPER",
     MODERATOR: "MODERATOR"
 };
+
+userHasBadge(user, BADGES.DEVELOPER);
+```
+
+Or alternatively, you can do the checking manually:
+```ts
+// import { BADGES } from "gizmo-api"
 
 user.badges.includes(BADGES.DEVELOPER);
 ```
