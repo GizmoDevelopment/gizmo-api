@@ -5,7 +5,7 @@ import { stringToBase64 } from "@utils/helpers";
 // Types
 import type { SearchQuery, User, AuthenticatedUser } from "@typings";
 
-export type { SearchQuery, User, AuthenticatedUser } from "@typings";
+export type { SearchQuery, User, AuthenticatedUser, Badge } from "@typings";
 
 export async function searchForUser (query: SearchQuery): Promise<User> {
 
