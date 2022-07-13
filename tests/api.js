@@ -6,7 +6,7 @@ describe("gizmo-api test", () => {
 
 	it("Should be able to search for users", async () => {
 
-		const user = await gizmo.searchForUser("Tja");
+		const user = await gizmo.searchForUser("Tjaz");
 
 		assert.strictEqual(user.id, 1);
 	});
