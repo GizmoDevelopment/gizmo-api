@@ -95,7 +95,7 @@ You are limited to **1 request** per **0.1 seconds**!
 A base user.
 
 ```ts
-// import type { User } from "gizmo-api"
+import type { User } from "gizmo-api"
 
 interface User {
     id: number;
@@ -112,14 +112,14 @@ interface User {
 The badge union.
 
 ```ts
-// import type { Badge } from "gizmo-api"
+import type { Badge } from "gizmo-api"
 
 type Badge = "DEVELOPER" | "MODERATOR";
 ```
 
 To check for whether a user has a certain badge, use the provided enum and method:
 ```ts
-// import { userHasBadge, BADGES } from "gizmo-api"
+import { userHasBadge, BADGES } from "gizmo-api"
 
 const BADGES = {
     DEVELOPER: "DEVELOPER",
@@ -131,7 +131,7 @@ userHasBadge(user, BADGES.DEVELOPER);
 
 Or alternatively, you can do the checking manually:
 ```ts
-// import { BADGES } from "gizmo-api"
+import { BADGES } from "gizmo-api"
 
 user.badges.includes(BADGES.DEVELOPER);
 ```
