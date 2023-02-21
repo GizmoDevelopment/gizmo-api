@@ -41,7 +41,7 @@
   "devDependencies": {
     "@gizmo-dev/eslint-plugin": "^3.3.2",
     "@types/node": "^14.18.36",
-    "esbuild": "^0.16.17",
+    "esbuild": "^0.17.0",
     "eslint": "^8.34.0",
     "mocha": "^10.2.0",
     "ts-patch": "^2.1.0",
