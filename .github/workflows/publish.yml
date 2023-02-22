@@ -9,6 +9,8 @@ jobs:
 
   build:
     uses: GizmoDevelopment/gizmo-api/.github/workflows/build-template.yml@master
+    with:
+      upload-artifact: true
 
   cd:
 
