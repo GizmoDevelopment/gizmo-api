@@ -6,10 +6,14 @@ on:
     types: [ published ]
 
 jobs:
+
+  build:
+    uses: GizmoDevelopment/gizmo-api/.github/workflows/build.yml@master
+
   cd:
 
     runs-on: ubuntu-latest
-    uses: GizmoDevelopment/gizmo-api/.github/workflows/build.yml@master
+    needs: build
 
     steps:
 
@@ -21,8 +25,6 @@ jobs:
       - name: Remove useless files and directories
         run: rm -rf ./build ./dist ./src ./dev
 
-      # - name: Deploy
-      #   uses: JS-DevTools/npm-publish@v1
-      #   with:
-      #     token: ${{ secrets.NPM_TOKEN }}
-      #     check-version: true
+      - name: Test
+        run: ls
+
