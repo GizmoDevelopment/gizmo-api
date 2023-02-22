@@ -8,7 +8,7 @@ on:
 jobs:
 
   build:
-    uses: GizmoDevelopment/gizmo-api/.github/workflows/build.yml@master
+    uses: GizmoDevelopment/gizmo-api/.github/workflows/build-template.yml@master
 
   cd:
 
