@@ -20,7 +20,7 @@
     "build:fix-bundle-version-in-readme": "node ./scripts/fix-bundle-version-in-readme.js",
     "build:node": "rm -rf ./lib && pnpm build:ts-node",
     "build:browser": "rm -rf ./dist && pnpm build:ts-browser && pnpm build:js-bundle && pnpm build:rename-bundle && pnpm build:fix-bundle-version-in-readme",
-    "build": "pnpm lint && pnpm build:node && pnpm build:browser && pnpm test"
+    "build": "pnpm lint && pnpm build:node && pnpm build:browser"
   },
   "files": [
     "lib"
