@@ -9,13 +9,11 @@ jobs:
   cd:
 
     runs-on: ubuntu-latest
+    uses: GizmoDevelopment/gizmo-api/.github/workflows/build.yml@master
 
     steps:
-    
-      - name: Set up environment
-        uses: GizmoDevelopment/gizmo-api/.github/workflows/build.yml@master
 
-      - name: Build module
+      - name: Build Node module
         run: |
           pnpm build:cleanup
           pnpm build:node
