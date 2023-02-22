@@ -19,8 +19,8 @@ jobs:
 
       - name: Build Node module
         run: |
-          pnpm build:cleanup
-          pnpm build:node
+          npm run build:cleanup
+          npm run build:node
 
       - name: Remove useless files and directories
         run: rm -rf ./build ./dist ./src ./dev
