@@ -3,7 +3,7 @@ name: Build & Test
 on:
   workflow_call:
     inputs:
-      upload_artifact:
+      upload-artifact:
         required: false
         type: boolean
         default: false
