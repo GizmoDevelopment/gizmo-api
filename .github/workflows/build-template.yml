@@ -65,5 +65,7 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: gizmo-api
-        path: .
+        path: |
+          .
+          !node_modules/
         if-no-files-found: error
