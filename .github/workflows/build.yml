@@ -1,7 +1,71 @@
-name: Build
+name: Build & Test
 
-on: [ push, pull_request ]
+on:
+  workflow_call:
+    inputs:
+      upload-artifact:
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   build:
-    uses: GizmoDevelopment/gizmo-api/.github/workflows/build-template.yml@master
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 14 ]
+
+    steps:
+
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      id: pnpm-install
+      with:
+        version: 7
+        run_install: false
+
+    - name: Get pnpm store directory
+      id: pnpm-cache
+      shell: bash
+      run: |
+        echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+    - name: Set up pnpm cache
+      uses: actions/cache@v3
+      with:
+        path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-pnpm-store-
+
+    - name: Install dependencies
+      run: pnpm install
+
+    - name: Lint
+      run: pnpm lint
+
+    - name: Build
+      run: pnpm build
+
+    - name: Test
+      run: pnpm test
+
+    - name: Upload build artifact
+      if: ${{ inputs.upload-artifact == true }}
+      uses: actions/upload-artifact@master
+      with:
+        name: gizmo-api
+        path: |
+          .
+          !node_modules/
+        if-no-files-found: error
