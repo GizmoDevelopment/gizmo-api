@@ -8,7 +8,7 @@ on:
 jobs:
 
   build:
-    uses: GizmoDevelopment/gizmo-api/.github/workflows/build-template.yml@master
+    uses: GizmoDevelopment/gizmo-api/.github/workflows/build.yml@master
     with:
       upload-artifact: true
 
