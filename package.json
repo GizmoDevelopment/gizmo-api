@@ -10,11 +10,10 @@
     "gizmo api"
   ],
   "scripts": {
-    "prepare": "npx ts-patch install -s",
     "lint": "eslint --ext .ts,.js ./src",
     "test": "mocha ./tests/api.js",
-    "build:ts-node": "tsc -p tsconfig.node.json",
-    "build:ts-browser": "tsc -p tsconfig.browser.json",
+    "build:ts-node": "tsc -p tsconfig.node.json && tsc-alias -p tsconfig.node.json",
+    "build:ts-browser": "tsc -p tsconfig.browser.json && tsc-alias -p tsconfig.browser.json",
     "build:js-bundle": "esbuild ./dist/index.js --bundle --minify --global-name=gizmo --outfile=./bundle/gizmo-api.bundle.js",
     "build:rename-bundle": "node ./scripts/rename-bundle.js",
     "build:fix-bundle-version-in-readme": "node ./scripts/fix-bundle-version-in-readme.js",
@@ -46,9 +45,8 @@
     "esbuild": "^0.17.19",
     "eslint": "^8.40.0",
     "mocha": "^10.2.0",
-    "ts-patch": "^2.1.0",
-    "typescript": "^4.9.5",
-    "typescript-transform-paths": "^3.4.6"
+    "tsc-alias": "^1.8.6",
+    "typescript": "^5.0.4"
   },
   "dependencies": {
     "cross-fetch": "^3.1.6"

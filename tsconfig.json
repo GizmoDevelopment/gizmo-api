@@ -2,18 +2,13 @@
 	"compilerOptions": {
 		"target": "ES2019",
 		"strict": true,
-		"baseUrl": "./src",
+		"baseUrl": "./",
 		"sourceMap": true,
 		"paths": {
-			"@/*": ["./*"],
-			"@utils/*": ["./utils/*"],
-			"@typings": ["./types.ts"],
-			"@constants": ["./constants.ts"]
-		},
-		"plugins": [
-			{ "transform": "typescript-transform-paths" },
-			{ "transform": "typescript-transform-paths", "afterDeclarations": true }
-		]
+			"@utils/*": ["./src/utils/*"],
+			"@typings": ["./src/types.ts"],
+			"@constants": ["./src/constants.ts"]
+		}
 	},
 	"include": [
 		"./src/**/*"
