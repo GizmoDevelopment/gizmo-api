@@ -27,7 +27,7 @@ jobs:
           if-no-files-found: error
 
       - name: Publish
-        uses: JS-DevTools/npm-publish@v1
+        uses: JS-DevTools/npm-publish@v2
         with:
           token: ${{ secrets.NPM_TOKEN }}
           check-version: true
