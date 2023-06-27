@@ -40,7 +40,7 @@
   },
   "homepage": "https://github.com/GizmoDevelopment/gizmo-api/#readme",
   "devDependencies": {
-    "@gizmo-dev/eslint-plugin": "^3.3.4",
+    "@gizmo-dev/eslint-plugin": "^3.3.5",
     "@types/node": "^18.16.18",
     "esbuild": "^0.18.10",
     "eslint": "^8.43.0",
