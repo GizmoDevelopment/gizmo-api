@@ -1,4 +1,10 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": [ "github>GizmoDevelopment/renovate-config" ]
+	"extends": [ "github>GizmoDevelopment/renovate-config" ],
+	"packageRules": [
+		{
+			"matchPackageNames": [ "esbuild" ],
+			"automerge": true
+		}
+	]
 }
