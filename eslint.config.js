@@ -15,6 +15,13 @@ export default tslint.config(
 			parserOptions: {
 				project: "tsconfig.json"
 			}
-		}
+		},
+		ignores: [
+			"bundle",
+			"dist",
+			"lib",
+			"scripts",
+			"tests/**"
+		]
 	}
 );
