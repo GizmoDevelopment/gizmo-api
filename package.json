@@ -11,7 +11,7 @@
     "gizmo api"
   ],
   "scripts": {
-    "lint": "eslint --ext .ts,.js ./src",
+    "lint": "eslint ./src",
     "test": "mocha ./tests/api.js",
     "build:ts-node": "tsc -p tsconfig.node.json && tsc-alias -p tsconfig.node.json",
     "build:ts-browser": "tsc -p tsconfig.browser.json && tsc-alias -p tsconfig.browser.json",
