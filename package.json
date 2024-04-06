@@ -4,19 +4,20 @@
   "description": "A minimal wrapper for interfacing with the Gizmo API.",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
+  "type": "module",
   "keywords": [
     "gizmo",
     "gizmo-api",
     "gizmo api"
   ],
   "scripts": {
-    "lint": "eslint --ext .ts,.js ./src",
+    "lint": "eslint ./src",
     "test": "mocha ./tests/api.js",
     "build:ts-node": "tsc -p tsconfig.node.json && tsc-alias -p tsconfig.node.json",
     "build:ts-browser": "tsc -p tsconfig.browser.json && tsc-alias -p tsconfig.browser.json",
     "build:js-bundle": "esbuild ./dist/index.js --bundle --minify --global-name=gizmo --outfile=./bundle/gizmo-api.bundle.js",
-    "build:rename-bundle": "node ./scripts/rename-bundle.js",
-    "build:fix-bundle-version-in-readme": "node ./scripts/fix-bundle-version-in-readme.js",
+    "build:rename-bundle": "node ./scripts/rename-bundle.cjs",
+    "build:fix-bundle-version-in-readme": "node ./scripts/fix-bundle-version-in-readme.cjs",
     "build:node": "pnpm build:ts-node",
     "build:browser": "pnpm build:ts-browser && pnpm build:js-bundle && pnpm build:rename-bundle && pnpm build:fix-bundle-version-in-readme",
     "build:cleanup": "rm -rf ./lib ./dist",
@@ -40,13 +41,15 @@
   },
   "homepage": "https://github.com/GizmoDevelopment/gizmo-api/#readme",
   "devDependencies": {
-    "@gizmo-dev/eslint-plugin": "^3.3.8",
+    "@gizmo-dev/eslint-plugin": "^4.0.0",
     "@types/node": "^18.18.6",
     "esbuild": "^0.20.2",
-    "eslint": "^8.57.0",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0",
     "mocha": "^10.4.0",
     "tsc-alias": "^1.8.8",
-    "typescript": "^5.4.4"
+    "typescript": "^5.4.4",
+    "typescript-eslint": "^7.5.0"
   },
   "dependencies": {
     "cross-fetch": "^4.0.0"
