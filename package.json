@@ -4,6 +4,7 @@
   "description": "A minimal wrapper for interfacing with the Gizmo API.",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
+  "type": "module",
   "keywords": [
     "gizmo",
     "gizmo-api",
