@@ -46,7 +46,7 @@
     "eslint": "^8.57.0",
     "mocha": "^10.5.2",
     "tsc-alias": "^1.8.10",
-    "typescript": "^5.5.2"
+    "typescript": "^5.5.3"
   },
   "dependencies": {
     "cross-fetch": "^4.0.0"
