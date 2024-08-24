@@ -11,9 +11,11 @@
 		}
 	},
 	"include": [
-		"./src/**/*"
+		"src/**/*",
+		"eslint.config.mjs"
 	],
 	"exclude": [
-		"scripts/"
+		"scripts/",
+		"tests/"
 	]
 }
