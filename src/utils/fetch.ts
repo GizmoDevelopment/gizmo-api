@@ -8,7 +8,7 @@ function _fetch (url: string, options: RequestInit): Promise<Response> {
 	if (typeof fetch === "function") {
 		return fetch(url, options);
 	} else {
-		// eslint-disable-next-line @typescript-eslint/no-var-requires
+		// eslint-disable-next-line @typescript-eslint/no-require-imports
 		return require("cross-fetch")(url, options);
 	}
 }
