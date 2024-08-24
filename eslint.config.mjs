@@ -11,10 +11,6 @@ export default [
 				...globals.node,
 				...globals.browser
 			},
-			env: {
-				browser: true,
-				node: true
-			},
 			parserOptions: {
 				project: true
 			}
