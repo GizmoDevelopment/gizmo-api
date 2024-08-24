@@ -10,7 +10,9 @@
     "gizmo api"
   ],
   "scripts": {
-    "lint": "eslint --ext .ts,.js ./src",
+    "lint": "pnpm lint:src && pnpm lint:dev",
+    "lint:src": "eslint -c eslint.config.mjs ./src/**/*",
+    "lint:dev": "eslint -c eslint.dev.config.mjs ./scripts/**/* ./tests/**/*",
     "test": "mocha ./tests/api.js",
     "build:ts-node": "tsc -p tsconfig.node.json && tsc-alias -p tsconfig.node.json",
     "build:ts-browser": "tsc -p tsconfig.browser.json && tsc-alias -p tsconfig.browser.json",
@@ -40,10 +42,11 @@
   },
   "homepage": "https://github.com/GizmoDevelopment/gizmo-api/#readme",
   "devDependencies": {
-    "@gizmo-dev/eslint-plugin": "^3.3.8",
+    "@gizmo-dev/eslint-plugin": "^5.0.0",
     "@types/node": "^18.18.6",
     "esbuild": "^0.23.1",
-    "eslint": "^8.57.0",
+    "eslint": "^9.9.1",
+    "globals": "^15.9.0",
     "mocha": "^10.7.3",
     "tsc-alias": "^1.8.10",
     "typescript": "^5.5.4"

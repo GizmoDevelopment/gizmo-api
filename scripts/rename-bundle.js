@@ -11,7 +11,7 @@ const packageJsonPath = path.join(rootDirPath, "package.json");
 const { version } = require(packageJsonPath);
 
 const oldBundlePath = path.join(bundleDirPath, "gizmo-api.bundle.js");
-const newBundlePath = path.join(bundleDirPath, `gizmo-api@${ version }.bundle.js`);
+const newBundlePath = path.join(bundleDirPath, `gizmo-api@${version}.bundle.js`);
 
 fs.rename(oldBundlePath, newBundlePath, err => {
 	if (err) throw err;
