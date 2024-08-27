@@ -1,4 +1,4 @@
-# gizmo-api <a href="https://github.com/GizmoDevelopment/gizmo-api/actions"><img src="https://img.shields.io/github/actions/workflow/status/GizmoDevelopment/gizmo-api/build.yml?branch=master"></a>
+# gizmo-api <a href="https://github.com/GizmoDevelopment/gizmo-api/actions"><img src="https://img.shields.io/github/actions/workflow/status/GizmoDevelopment/gizmo-api/ci.yml?branch=master"></a>
 A minimal wrapper for interfacing with the Gizmo API.
 
 # Table of Contents
