@@ -36,6 +36,9 @@ importers:
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
+      undici-types:
+        specifier: ^6.19.8
+        version: 6.19.8
 
 packages:
 

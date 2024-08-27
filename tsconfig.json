@@ -7,7 +7,10 @@
 		"paths": {
 			"@utils/*": ["./src/utils/*"],
 			"@typings": ["./src/types.ts"],
-			"@constants": ["./src/constants.ts"]
+			"@constants": ["./src/constants.ts"],
+			"undici-types": [
+				"./node_modules/undici-types/index.d.ts"
+			],
 		}
 	},
 	"include": [

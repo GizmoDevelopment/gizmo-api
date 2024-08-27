@@ -49,7 +49,8 @@
     "globals": "^15.9.0",
     "mocha": "^10.7.3",
     "tsc-alias": "^1.8.10",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "undici-types": "^6.19.8"
   },
   "dependencies": {
     "cross-fetch": "^4.0.0"
