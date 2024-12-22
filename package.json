@@ -53,7 +53,7 @@
     "undici-types": "^6.21.0"
   },
   "dependencies": {
-    "cross-fetch": "^4.0.0"
+    "cross-fetch": "^4.1.0"
   },
   "browser": {
     "cross-fetch": false
