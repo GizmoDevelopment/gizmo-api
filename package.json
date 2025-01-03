@@ -28,7 +28,7 @@
     "lib"
   ],
   "engines": {
-    "node": ">=20.18.1"
+    "node": ">=22.12.0"
   },
   "packageManager": "pnpm@9.15.2",
   "repository": {
@@ -43,7 +43,7 @@
   "homepage": "https://github.com/GizmoDevelopment/gizmo-api/#readme",
   "devDependencies": {
     "@gizmo-dev/eslint-plugin": "^5.0.6",
-    "@types/node": "^20.17.11",
+    "@types/node": "^22.10.5",
     "esbuild": "^0.24.2",
     "eslint": "^9.17.0",
     "globals": "^15.14.0",
