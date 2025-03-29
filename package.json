@@ -47,7 +47,7 @@
     "esbuild": "^0.25.1",
     "eslint": "^9.23.0",
     "globals": "^15.15.0",
-    "mocha": "^10.8.2",
+    "mocha": "^11.1.0",
     "tsc-alias": "^1.8.12",
     "typescript": "^5.8.2",
     "undici-types": "^6.21.0"
