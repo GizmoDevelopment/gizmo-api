@@ -45,7 +45,7 @@
     "@gizmo-dev/eslint-plugin": "^5.0.7",
     "@types/node": "^20.17.32",
     "esbuild": "^0.25.3",
-    "eslint": "^9.25.1",
+    "eslint": "^9.26.0",
     "globals": "^15.15.0",
     "mocha": "^10.8.2",
     "tsc-alias": "^1.8.15",
