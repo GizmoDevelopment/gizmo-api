@@ -28,7 +28,7 @@
     "lib"
   ],
   "engines": {
-    "node": ">=20.19.3"
+    "node": ">=20.19.4"
   },
   "packageManager": "pnpm@9.15.9",
   "repository": {
