@@ -19,7 +19,7 @@ importers:
         specifier: ^20.19.9
         version: 20.19.9
       esbuild:
-        specifier: ^0.25.7
+        specifier: ^0.25.8
         version: 0.25.8
       eslint:
         specifier: ^9.31.0
